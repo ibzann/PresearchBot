@@ -1,22 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
+using System;
 
 namespace PresearchBot
 {
-    static class Program
+    class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        [STAThread]
-        static void Main()
+        static void Main(string[] args)
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Console.SetWindowSize(72, 10);
+            Console.WriteLine("------------------------------------------------------------------------");
+            Console.WriteLine("------------------------------PresearchBot------------------------------");
+            Console.WriteLine("---------------------------Made by Ibzan#0286---------------------------");
+            Console.WriteLine("------------------------------------------------------------------------");
+            IWebDriver driver = new ChromeDriver();
+            driver.Navigate().GoToUrl("https://google.com");
+            Console.ReadLine();
         }
     }
 }
